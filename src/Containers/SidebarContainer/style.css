@@ -1,0 +1,32 @@
+html, body{
+	margin : 0px;
+	height : 100%;	
+}
+
+#h1{
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 400;
+	font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+	line-height: 1.5em;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+#chart{
+	margin : 100px;
+}
+
+#containerChart{
+	display: grid;
+	margin-left : -100px;
+}
+
+#tab{
+	justify-self : center;
+	max-width : 600px;
+	margin-left : 200px;
+}
+
+#pieChart{
+	margin-left : -210px;
+}
