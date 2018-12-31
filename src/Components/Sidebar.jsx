@@ -70,14 +70,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -94,9 +92,7 @@ import MobileFriendly from '@material-ui/icons/MobileFriendly';
 import CreditCard from '@material-ui/icons/CreditCard';
 import Receipt from '@material-ui/icons/Receipt';
 import Settings from '@material-ui/icons/Settings';
-import s from '../Containers/SidebarContainer/style.css';
 
-import Chart from './Chart';
 import Avatar from './Avatar';
 import Tab from './Tab';
 
@@ -203,41 +199,35 @@ class ResponsiveDrawer extends React.Component {
     const drawer = (
       <div className= { classes.container }>
         <div className={classes.toolbar} style= {{ 'backgroundColor':'#009ee3' }}/>
-        {/* <Divider /> */}
 				<List className= { classes.categories }>
 	        <p className= { classes.subCategories }>
 						Mi dinero
 					</p>
           {['Actividad', 'Informes', 'Inversiones'].map((text, index) => (
-            <ListItem className= { classes.listItem } onClick= { index === 2 && handleClick || defaultClick } button key={text}>
-              <ListItemIcon >{ index === 0 && <ListAlt className= { classes.colorIcon }/> || index === 1 && <Assessment className= { classes.colorIcon } /> || index === 2 && <TrendingUp className= { classes.colorIcon } />}</ListItemIcon>
-              {/* <ListItemText primary={ text }/> */}
+            <ListItem className= { classes.listItem } onClick= { (index === 2 && handleClick) || (defaultClick) } button key={text}>
+              <ListItemIcon >{ (index === 0 && <ListAlt className= { classes.colorIcon }/>) || (index === 1 && <Assessment className= { classes.colorIcon } />) || (index === 2 && <TrendingUp className= { classes.colorIcon } />) }</ListItemIcon>
 							<p className= { classes.sidebarList }>{ text }</p>
             </ListItem>
           ))}
-        </List>
-        {/* <Divider /> */}
+        </List> 
         <List className= { classes.categories }>
 					<p className= { classes.subCategories }>
 						Cobrar
 					</p>
           {['Código QR', 'Link de pago', 'Solicitar dinero', 'Suscripciones'].map((text, index) => (
             <ListItem className= { classes.listItem } button key={text}>
-              <ListItemIcon>{index === 0 && <SelectAll className= { classes.colorIcon } /> || index === 1 && <Link className= { classes.colorIcon } /> || index === 2 && <Feedback className= { classes.colorIcon }/> || index === 3 && <Subscriptions className= { classes.colorIcon }/> }</ListItemIcon>
-              {/* <ListItemText primary={text} /> */}
+              <ListItemIcon>{ (index === 0 && <SelectAll className= { classes.colorIcon } />) || (index === 1 && <Link className= { classes.colorIcon } />) || (index === 2 && <Feedback className= { classes.colorIcon }/>) || (index === 3 && <Subscriptions className= { classes.colorIcon }/>) }</ListItemIcon>
 							<p className= { classes.sidebarList }>{ text }</p>
             </ListItem>
           ))}
         </List>
-        {/* <Divider /> */}
         <List className= { classes.categories }>
 					<p className= { classes.subCategories }>
 						Pagar
 					</p>
           {['Enviar dinero', 'Recargar celular', 'Cargar SUBE', 'Pagar servicios'].map((text, index) => (
             <ListItem className= { classes.listItem } button key={text}>
-              <ListItemIcon>{index === 0 && <Input className= { classes.colorIcon } /> || index === 1 && <MobileFriendly className= { classes.colorIcon }/> || index === 2 && <CreditCard className= { classes.colorIcon }/> || index === 3 && <Receipt className= { classes.colorIcon }/> }</ListItemIcon>
-              {/* <ListItemText primary={text} className= { s.prueba }/> */}
+              <ListItemIcon>{ (index === 0 && <Input className= { classes.colorIcon } />) || (index === 1 && <MobileFriendly className= { classes.colorIcon }/>) || (index === 2 && <CreditCard className= { classes.colorIcon }/>) || (index === 3 && <Receipt className= { classes.colorIcon }/>) }</ListItemIcon>
 							<p className= { classes.sidebarList }>{ text }</p>
 					  </ListItem>
           ))}
@@ -246,7 +236,6 @@ class ResponsiveDrawer extends React.Component {
 					<ListItem className= { classes.listItem } button key={'Configuracion'}>
 						<ListItemIcon> <Settings className= { classes.colorIcon } /> </ListItemIcon>
 						<p className= { classes.sidebarList }>Configuracion</p>
-						{/* <ListItemText primary={'Configuracion'} /> */}
 					</ListItem>
 				</List>
       </div>
@@ -304,13 +293,6 @@ class ResponsiveDrawer extends React.Component {
 				{
 					chart && <Tab />
 				}	
-
-        {/* <main className={classes.content}>
-          <div className={classes.toolbar} />
-						{
-							chart && <Tab />
-						}	
-        </main> */}
       </div>
     );
   }

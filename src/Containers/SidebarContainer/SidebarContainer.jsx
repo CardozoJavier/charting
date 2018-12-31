@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
+import s from './style.css';
 
 import Sidebar from '../../Components/Sidebar';
 
@@ -25,7 +25,8 @@ class SidebarContainer extends Component {
 	}
 	render(){
 		return(
-			<div style={{ 'height':'100%' }}>
+			// <div style={{ 'height':'100%' }}>
+			<div ClassName= { s.container } >
 				<Sidebar chart= { this.state.chart } defaultClick= { this.defaultClick } handleClick= { this.handleClick }/>
 			</div>
 		)

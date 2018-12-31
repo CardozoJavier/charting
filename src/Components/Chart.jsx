@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { PieChart, Pie, Sector, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import s from '../Containers/SidebarContainer/style.css';
   
 
@@ -68,7 +68,7 @@ export default class Chart extends Component {
 					{name: '21/12', 'Desempeño del fondo': 3.90, 'Capital acumulado': 965, amt: 20},
 		];
   	const { opacity } = this.state;
-  	const { handleClick } = this.props;
+  	// const { handleClick } = this.props;
 		return (
     	<div id='containerChart'>
 				<h1 id='h1'>Rendimientos del fondo</h1>
